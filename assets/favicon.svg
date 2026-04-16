@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="64" fill="#11100E"/>
+  <rect x="18" y="18" width="220" height="220" rx="52" stroke="#FFF4E5" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="188" cy="68" r="42" stroke="#FFF4E5" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="70" cy="190" r="56" fill="url(#paint0_radial_90_8)"/>
+  <path d="M79.7333 100.533C88.9408 100.533 96.4 93.0737 96.4 83.8663C96.4 74.6589 88.9408 67.1997 79.7333 67.1997C70.5259 67.1997 63.0667 74.6589 63.0667 83.8663C63.0667 93.0737 70.5259 100.533 79.7333 100.533Z" stroke="#F7EEE2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M79.7333 188.8C88.9408 188.8 96.4 181.341 96.4 172.133C96.4 162.926 88.9408 155.467 79.7333 155.467C70.5259 155.467 63.0667 162.926 63.0667 172.133C63.0667 181.341 70.5259 188.8 79.7333 188.8Z" stroke="#F7EEE2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M92.2666 74.4668L186.933 49.3335" stroke="#F7EEE2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M92.2666 181.533L186.933 206.667" stroke="#F7EEE2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M92.2666 89.6001L148.933 128L92.2666 166.4" stroke="#F0C48F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <radialGradient id="paint0_radial_90_8" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(70 190) rotate(90) scale(56)">
+      <stop stop-color="#C4854F" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#C4854F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,23 @@
+<svg width="900" height="980" viewBox="0 0 900 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="980" fill="#17130F"/>
+  <rect x="36" y="36" width="828" height="908" rx="34" stroke="#FFF4E5" stroke-opacity="0.14" stroke-width="2"/>
+  <circle cx="702" cy="170" r="146" stroke="#FFF4E5" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="176" cy="802" r="188" fill="url(#paint0_radial_44_2)"/>
+  <path d="M351.3 255.3C392.8 204.6 470.5 189.4 530.8 218.7C591.7 248.2 628 313.9 625.9 381.9L622.5 492.2C621.5 524.7 610.2 556.1 590.2 581.7L548.7 634.9C528.1 661.2 497.1 677.2 463.8 678.6C430.4 680 398.2 666.6 375.4 642.1L332.4 595.8C308.5 570 294.9 536.6 293.8 501.4L290.4 394.3C288.7 341.5 309.8 289 351.3 255.3Z" fill="url(#paint1_linear_44_2)"/>
+  <path d="M324.7 366.4C330.7 275.5 404.7 204 496 204C596.6 204 675.4 291.4 664.9 391.5L658.2 455.8C654.2 493.8 637.8 529.4 611.3 556.8L562.7 607C527.9 642.9 478.4 660.7 429.1 655.4C379.7 650.1 335.1 622.3 308.3 580.5L271.6 523.4C248.1 486.9 236.9 443.8 239.5 400.5L244.7 315.3C248.9 245.9 305.2 191 374.7 191H431.5C394.5 219.5 358.4 271 353.8 331.3L350.9 368.3L324.7 366.4Z" fill="#0F0C09"/>
+  <path d="M441.8 432.9C462.2 432.9 478.8 416.3 478.8 395.9C478.8 375.5 462.2 358.9 441.8 358.9C421.4 358.9 404.8 375.5 404.8 395.9C404.8 416.3 421.4 432.9 441.8 432.9Z" fill="#E6C095" fill-opacity="0.16"/>
+  <path d="M570.2 432.9C590.6 432.9 607.2 416.3 607.2 395.9C607.2 375.5 590.6 358.9 570.2 358.9C549.8 358.9 533.2 375.5 533.2 395.9C533.2 416.3 549.8 432.9 570.2 432.9Z" fill="#E6C095" fill-opacity="0.16"/>
+  <path d="M454 760H446C444.895 760 444 760.895 444 762V836C444 837.105 444.895 838 446 838H454C455.105 838 456 837.105 456 836V762C456 760.895 455.105 760 454 760Z" fill="#FFF4E5" fill-opacity="0.42"/>
+  <text x="88" y="834" fill="#F7EEE2" fill-opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="92" letter-spacing="0.08em">BARBER ONE</text>
+  <text x="90" y="886" fill="#F7EEE2" fill-opacity="0.54" font-family="Arial, sans-serif" font-size="28" letter-spacing="0.34em">ADD REAL PHOTO HERE</text>
+  <defs>
+    <radialGradient id="paint0_radial_44_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(176 802) rotate(90) scale(188)">
+      <stop stop-color="#B47138" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#B47138" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear_44_2" x1="458" y1="209" x2="458" y2="679" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#403022"/>
+      <stop offset="1" stop-color="#241B15"/>
+    </linearGradient>
+  </defs>
+</svg>
