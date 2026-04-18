@@ -16,24 +16,16 @@ const siteConfig = {
   },
   barbers: [
     {
-      name: "Barber One",
-      specialty:
-        "Precision cuts, clean fades, and detailed finishing for a sharp, polished result.",
-      bookingUrl:
-        "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1r6zZLljOS8GYVcC4L3SEH0yY4iaOu_sbaQF0KqBjDi-2nr2Km4JYf9W1wXk7E44LpBAMIOIqJ?gv=true",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
-      alt: "Portrait placeholder for Barber One"
+      name: "Hamza",
+      image: "assets/hamza.jpg",
+      imageAlt: "Hamza from Vancity Barbershop",
+      bookingUrl: "https://calendar.app.google/TrcwWKqFUEMZci1H8"
     },
     {
-      name: "Barber Two",
-      specialty:
-        "Texture work, facial clean-up, and modern styling with a clean professional finish.",
-      bookingUrl:
-        "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1r6zZLljOS8GYVcC4L3SEH0yY4iaOu_sbaQF0KqBjDi-2nr2Km4JYf9W1wXk7E44LpBAMIOIqJ?gv=true",
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80",
-      alt: "Portrait placeholder for Barber Two"
+      name: "Damian",
+      image: "assets/damian.jpg",
+      imageAlt: "Damian from Vancity Barbershop",
+      bookingUrl: "https://calendar.app.google/WbitP88bB7vKEigu5"
     }
   ],
   hairstyles: [
@@ -45,33 +37,6 @@ const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1762914395007-03ca29612b9f?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
       alt: "Man with a slicked-back taper hairstyle"
-    },
-    {
-      tag: "Low Maintenance",
-      name: "Blonde Buzz Cut",
-      copy:
-        "A short all-over cut with a bold color finish that stays easy to manage between visits.",
-      image:
-        "https://images.unsplash.com/photo-1761706660132-7005cbb3644a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-      alt: "Man with a short blonde buzz cut hairstyle"
-    },
-    {
-      tag: "Statement Cut",
-      name: "Retro Pompadour",
-      copy:
-        "Extra volume on top with tight sides for a dramatic silhouette and a more fashion-forward look.",
-      image:
-        "https://images.unsplash.com/photo-1695662917617-a1bfc0e2fbed?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lbnMlMjBoYWlyY3V0fGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000",
-      alt: "Man with a high-volume pompadour hairstyle"
-    },
-    {
-      tag: "Texture",
-      name: "Textured Side Sweep",
-      copy:
-        "Longer movement through the top with a side sweep that adds shape and a softer finish.",
-      image:
-        "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1lbnMlMjBoYWlyY3V0fGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000",
-      alt: "Man with a textured side-swept hairstyle"
     },
     {
       tag: "Classic Fade",
@@ -97,9 +62,6 @@ const siteConfig = {
 const dom = {
   barberGrid: document.querySelector("#barber-grid"),
   barberTemplate: document.querySelector("#barber-card-template"),
-  bookingInlinePanel: document.querySelector("#booking-inline-panel"),
-  bookingInlineFrame: document.querySelector("[data-calendar-embed]"),
-  selectedBarberName: document.querySelector("[data-selected-barber-name]"),
   stylesTrack: document.querySelector("#styles-track"),
   styleTemplate: document.querySelector("#style-card-template"),
   currentYear: document.querySelector("#year")
@@ -111,6 +73,36 @@ function setMetaContent(id, value) {
   if (element) {
     element.setAttribute("content", value);
   }
+}
+
+function setHrefAttribute(id, value) {
+  const element = document.querySelector(`#${id}`);
+
+  if (element && value) {
+    element.setAttribute("href", value);
+  }
+}
+
+function getCanonicalUrl() {
+  if (typeof window === "undefined") {
+    return "";
+  }
+
+  const { protocol, hostname, pathname, search, hash } = window.location;
+  const isLocalHost =
+    protocol === "file:" ||
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname === "[::1]" ||
+    hostname === "0.0.0.0" ||
+    /\.local$/i.test(hostname) ||
+    /\.test$/i.test(hostname);
+
+  if (isLocalHost || !hostname) {
+    return "";
+  }
+
+  return `https://${hostname.replace(/^www\./i, "")}${pathname}${search}${hash}`;
 }
 
 function applyLink(element, href) {
@@ -130,16 +122,21 @@ function applyLink(element, href) {
 }
 
 function renderSeoMeta() {
+  const canonicalUrl = getCanonicalUrl();
+
   document.title = siteConfig.seo.pageTitle;
   setMetaContent("meta-description", siteConfig.seo.description);
   setMetaContent("meta-og-title", siteConfig.seo.pageTitle);
   setMetaContent("meta-og-description", siteConfig.seo.description);
+  setMetaContent("meta-og-url", canonicalUrl);
   setMetaContent("meta-twitter-title", siteConfig.seo.pageTitle);
   setMetaContent("meta-twitter-description", siteConfig.seo.description);
+  setHrefAttribute("canonical-url", canonicalUrl);
 }
 
 function renderStructuredData() {
   const schemaTarget = document.querySelector("#structured-data");
+  const canonicalUrl = getCanonicalUrl();
 
   if (!schemaTarget) {
     return;
@@ -174,8 +171,8 @@ function renderStructuredData() {
     }
   };
 
-  if (window.location.protocol !== "file:") {
-    structuredData.url = window.location.href;
+  if (canonicalUrl) {
+    structuredData.url = canonicalUrl;
   }
 
   schemaTarget.textContent = JSON.stringify(structuredData);
@@ -218,38 +215,6 @@ function renderShopMeta() {
   renderStructuredData();
 }
 
-function openInlineBooking(barber, trigger) {
-  if (!dom.bookingInlinePanel || !dom.bookingInlineFrame || !dom.selectedBarberName) {
-    return;
-  }
-
-  dom.selectedBarberName.textContent = barber.name;
-
-  if (dom.bookingInlineFrame.getAttribute("src") !== barber.bookingUrl) {
-    dom.bookingInlineFrame.setAttribute("src", barber.bookingUrl);
-  }
-
-  dom.bookingInlinePanel.classList.remove("d-none");
-  dom.bookingInlinePanel.classList.add("is-active");
-
-  document.querySelectorAll(".booking-card").forEach((card) => {
-    card.classList.remove("is-selected");
-  });
-
-  const selectedCard = trigger?.closest(".booking-card");
-
-  if (selectedCard) {
-    selectedCard.classList.add("is-selected");
-  }
-
-  requestAnimationFrame(() => {
-    dom.bookingInlinePanel.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  });
-}
-
 function renderBarbers() {
   if (!dom.barberGrid || !dom.barberTemplate) {
     return;
@@ -260,26 +225,21 @@ function renderBarbers() {
 
   siteConfig.barbers.forEach((barber, index) => {
     const node = dom.barberTemplate.content.cloneNode(true);
-    const card = node.querySelector(".booking-card");
+    const shell = node.querySelector(".barber-booking-shell");
+    const bookingLink = node.querySelector("[data-barber-booking-link]");
     const image = node.querySelector("[data-barber-image]");
     const name = node.querySelector("[data-barber-name]");
-    const specialty = node.querySelector("[data-barber-specialty]");
+    const copy = node.querySelector("[data-barber-copy]");
     const cardIndex = node.querySelector("[data-barber-index]");
-    const bookingLink = node.querySelector("[data-booking-link]");
 
-    card.classList.add(`reveal-delay-${Math.min(index, 3)}`);
-    image.src = barber.image;
-    image.alt = barber.alt;
+    shell.classList.add(`reveal-delay-${Math.min(index, 3)}`);
     name.textContent = barber.name;
-    specialty.textContent = barber.specialty;
+    copy.textContent = `Book directly with ${barber.name}. Opens in a new tab.`;
     cardIndex.textContent = `Barber 0${index + 1}`;
+    image.src = barber.image;
+    image.alt = barber.imageAlt;
+    bookingLink.setAttribute("aria-label", `Book an appointment with ${barber.name}`);
     applyLink(bookingLink, barber.bookingUrl);
-    bookingLink.dataset.barberIndex = String(index);
-
-    bookingLink.addEventListener("click", (event) => {
-      event.preventDefault();
-      openInlineBooking(barber, bookingLink);
-    });
 
     fragment.appendChild(node);
   });
