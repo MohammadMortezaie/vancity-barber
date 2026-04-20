@@ -16,7 +16,7 @@ const siteConfig = {
   },
   barbers: [
     {
-      name: "Hamza",
+      name: "Master Barber Hamza",
       image: "assets/hamza.jpg",
       imageAlt: "Hamza from Vancity Barbershop",
       bookingUrl: "https://calendar.app.google/TrcwWKqFUEMZci1H8"
