@@ -31,11 +31,11 @@ const siteConfig = {
     },
     {
       name: "Jinus",
-      role: "MU Artist",
+      role: "PMU Artist",
       services:
         "Microblading, combo brows, powder Ambre brows, and lip blush pigmentation.",
       image: "assets/Jinus.jpeg",
-      imageAlt: "Jinus, MU Artist at Vancity Barbershop",
+      imageAlt: "Jinus, PMU Artist at Vancity Barbershop",
       bookingUrl: "https://calendar.app.google/4Xgq4h8KEA4j81CD9"
     }
   ],
