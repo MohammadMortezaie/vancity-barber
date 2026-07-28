@@ -17,15 +17,26 @@ const siteConfig = {
   barbers: [
     {
       name: "Master Barber Hamza",
+      role: "Barber",
       image: "assets/hamza.jpg",
       imageAlt: "Hamza from Vancity Barbershop",
-      bookingUrl: "https://calendar.app.google/pZRGUsMsFjhPNcGs6"
+      bookingUrl: "https://calendar.app.google/pZRGUsMsFjhPNcGs6`"
     },
     {
       name: "Damian",
+      role: "Barber",
       image: "assets/damian.jpg",
       imageAlt: "Damian from Vancity Barbershop",
       bookingUrl: "https://calendar.app.google/WbitP88bB7vKEigu5"
+    },
+    {
+      name: "Jinus",
+      role: "MU Artist",
+      services:
+        "Microblading, combo brows, powder Ambre brows, and lip blush pigmentation.",
+      image: "assets/Jinus.jpeg",
+      imageAlt: "Jinus, MU Artist at Vancity Barbershop",
+      bookingUrl: "https://calendar.app.google/4Xgq4h8KEA4j81CD9"
     }
   ],
   hairstyles: [
@@ -234,8 +245,9 @@ function renderBarbers() {
 
     shell.classList.add(`reveal-delay-${Math.min(index, 3)}`);
     name.textContent = barber.name;
-    copy.textContent = `Book directly with ${barber.name}. Opens in a new tab.`;
-    cardIndex.textContent = `Barber 0${index + 1}`;
+    copy.textContent =
+      barber.services || `Book directly with ${barber.name}. Opens in a new tab.`;
+    cardIndex.textContent = `${barber.role || "Specialist"} 0${index + 1}`;
     image.src = barber.image;
     image.alt = barber.imageAlt;
     bookingLink.setAttribute("aria-label", `Book an appointment with ${barber.name}`);
