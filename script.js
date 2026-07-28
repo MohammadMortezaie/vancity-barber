@@ -20,7 +20,7 @@ const siteConfig = {
       role: "Barber",
       image: "assets/hamza.jpg",
       imageAlt: "Hamza from Vancity Barbershop",
-      bookingUrl: "https://calendar.app.google/pZRGUsMsFjhPNcGs6`"
+      bookingUrl: "https://calendar.app.google/mSLjBs4fMPibERrq7"
     },
     {
       name: "Damian",
