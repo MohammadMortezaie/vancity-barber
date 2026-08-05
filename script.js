@@ -1,7 +1,7 @@
 const siteConfig = {
   shopName: "Vancity Barbershop",
-  phoneDisplay: "(778) 903-2377",
-  phoneHref: "tel:+17789032377",
+  phoneDisplay: "(604) 681-2424",
+  phoneHref: "tel:+16046812424",
   addressDisplay: "505 Bute St, Vancouver, BC V6E 2S8",
   addressHref:
     "https://maps.google.com/?q=505+Bute+St,+Vancouver,+BC+V6E+2S8",
